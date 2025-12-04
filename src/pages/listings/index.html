@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cần Thơ - Thuê phòng trọ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS: tuyệt đối để khỏi sai path -->
+  <link rel="stylesheet" href="/src/styles/style.css" />
+  <link rel="icon" href="/favicon.ico" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="logo">
+          <span class="logo-orb"></span>
+          <span class="logo-text-main">RoomHub</span>
+          <span class="logo-text-sub">Cần Thơ</span>
+        </div>
+        <div class="topbar-badge">
+          <span class="pulse-dot"></span>
+          Realtime listing
+        </div>
+      </div>
+      <div class="topbar-right">
+        <a class="topbar-cta" href="/src/pages/post/index.html">Đăng tin</a>
+      </div>
+    </header>
+
+    <section class="hero-search">
+      <div class="hero-title">
+        <h1>Thuê phòng trọ Cần Thơ</h1>
+        <p>Giao diện tương lai, lọc thông minh theo nhu cầu của bạn.</p>
+      </div>
+
+      <div class="hero-search-row">
+        <div class="hero-input-wrap">
+          <input
+            id="keywordInput"
+            class="input input-hero"
+            type="text"
+            placeholder="Nhập: gần ĐH Cần Thơ, Ninh Kiều, mini house."
+          />
+        </div>
+
+        <div class="hero-select-wrap">
+          <select id="districtSelect" class="select select-hero">
+            <option value="">Tất cả quận / huyện</option>
+          </select>
+        </div>
+
+        <button id="searchBtn" class="btn btn-primary" type="button">
+          <span>Quét phòng</span>
+        </button>
+      </div>
+
+      <div class="hero-meta">
+        <span id="totalCountText">0 phòng đang có sẵn</span>
+        <span class="hero-dot">•</span>
+        <span>UI: Dark neo-futuristic</span>
+      </div>
+    </section>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="card card-filter">
+          <div class="card-header">
+            <div>
+              <h2>Bộ lọc nâng cao</h2>
+              <p>Tinh chỉnh thêm cho kết quả chuẩn hơn.</p>
+            </div>
+            <span class="chip-label">AI assist</span>
+          </div>
+
+          <div class="filter-group">
+            <label>Khoảng giá (triệu/tháng)</label>
+            <select id="priceSelect" class="select">
+              <option value="">Không giới hạn</option>
+              <option value="under1">Dưới 1 triệu</option>
+              <option value="1-2">1 - 2 triệu</option>
+              <option value="2-3">2 - 3 triệu</option>
+              <option value="3-5">3 - 5 triệu</option>
+              <option value="5-7">5 - 7 triệu</option>
+              <option value="over7">Trên 7 triệu</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Diện tích (m²)</label>
+            <select id="areaSelect" class="select">
+              <option value="">Không giới hạn</option>
+              <option value="under20">Dưới 20 m²</option>
+              <option value="20-30">20 - 30 m²</option>
+              <option value="30-40">30 - 40 m²</option>
+              <option value="40-50">40 - 50 m²</option>
+              <option value="over50">Trên 50 m²</option>
+            </select>
+          </div>
+
+          <div class="filter-grid">
+            <div class="filter-group">
+              <label>Nội thất</label>
+              <select id="furnishSelect" class="select">
+                <option value="">Tất cả</option>
+                <option value="full">Full nội thất</option>
+                <option value="basic">Cơ bản</option>
+                <option value="empty">Nhà trống</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label>Loại hình</label>
+              <select id="typeSelect" class="select">
+                <option value="">Tất cả</option>
+                <option value="phong_tro">Phòng trọ</option>
+                <option value="chung_cu_mini">Mini house</option>
+                <option value="can_ho_dich_vu">Căn hộ dịch vụ</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label>Quick chips</label>
+            <div id="quickChips" class="quick-row">
+              <button class="quick-chip" data-chip="sv" type="button">
+                <span>Sinh viên</span><small>Dưới 2 triệu</small>
+              </button>
+              <button class="quick-chip" data-chip="full" type="button">
+                <span>Full nội thất</span><small>2 - 3 triệu</small>
+              </button>
+              <button class="quick-chip" data-chip="center" type="button">
+                <span>Trung tâm</span><small>Ninh Kiều</small>
+              </button>
+              <button class="quick-chip" data-chip="river" type="button">
+                <span>View sông</span><small>Cái Răng</small>
+              </button>
+            </div>
+          </div>
+
+          <div class="filter-footer">
+            <div class="filter-summary">
+              Đang hiển thị <strong id="countText">0</strong> phòng phù hợp
+            </div>
+            <button id="resetBtn" class="btn btn-ghost" type="button">Xóa bộ lọc</button>
+          </div>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div class="card card-list">
+          <div class="card-list-header">
+            <div>
+              <h2>Kết quả tìm kiếm</h2>
+              <p id="listSubtitle">Lọc theo từ khóa và bộ lọc bên trái.</p>
+            </div>
+            <div class="list-controls">
+              <label for="sortSelect">Sắp xếp</label>
+              <select id="sortSelect" class="select select-small">
+                <option value="newest">Mới nhất</option>
+                <option value="price-asc">Giá tăng dần</option>
+                <option value="price-desc">Giá giảm dần</option>
+                <option value="area-desc">Diện tích lớn nhất</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="roomList" class="room-list"></div>
+
+          <div id="emptyState" class="empty-state" style="display:none;">
+            <h3>Không tìm thấy phòng phù hợp</h3>
+            <p>Thử nới rộng khoảng giá, diện tích hoặc bỏ bớt điều kiện lọc.</p>
+          </div>
+
+          <div class="pagination">
+            <span id="pageInfo">Trang 1/1</span>
+            <div class="pagination-buttons">
+              <button id="prevPageBtn" class="pager-btn" disabled type="button">‹ Trước</button>
+              <button id="nextPageBtn" class="pager-btn" disabled type="button">Tiếp ›</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/src/scripts/app.js"></script>
+</body>
+</html>

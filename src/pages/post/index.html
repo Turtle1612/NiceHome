@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../../styles/base.css" />
+  <link rel="stylesheet" href="../../styles/components.css" />
+  <title>Đăng tin phòng trọ</title>
+</head>
+<body>
+  <main class="container">
+    <a href="../listings/index.html" class="badge" style="display:inline-block;margin-bottom:12px;">← Về danh sách</a>
+
+    <section class="card">
+      <h1 style="margin:0 0 6px;">Đăng tin phòng trọ</h1>
+      <p class="muted" style="margin:0 0 14px;">Điền thông tin, bên mình sẽ duyệt và đăng lên hệ thống.</p>
+
+      <form id="postForm" style="display:grid;gap:12px;">
+        <div class="row">
+          <div>
+            <label class="badge">Tên liên hệ</label>
+            <input class="input" name="contactName" required placeholder="VD: Nguyễn Văn A" />
+          </div>
+          <div>
+            <label class="badge">Số điện thoại</label>
+            <input class="input" name="phone" required placeholder="VD: 09xxxxxxxx" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label class="badge">Zalo (nếu có)</label>
+            <input class="input" name="zalo" placeholder="VD: 09xxxxxxxx" />
+          </div>
+          <div>
+            <label class="badge">Loại phòng</label>
+            <select class="select" name="type" required>
+              <option value="phong_tro">Phòng trọ</option>
+              <option value="chung_cu_mini">Chung cư mini</option>
+              <option value="o_ghep">Ở ghép</option>
+              <option value="can_ho">Căn hộ</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="badge">Tiêu đề tin</label>
+          <input class="input" name="title" required placeholder="VD: Phòng full nội thất, gần ĐH..." />
+        </div>
+
+        <div>
+          <label class="badge">Địa chỉ</label>
+          <input class="input" name="address" required placeholder="VD: 123 Lê Văn Lương, Quận 7..." />
+        </div>
+
+        <div class="row">
+          <div>
+            <label class="badge">Quận/Huyện</label>
+            <input class="input" name="district" required placeholder="VD: Quận 7" />
+          </div>
+          <div>
+            <label class="badge">Thành phố</label>
+            <input class="input" name="city" required value="TP.HCM" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label class="badge">Giá (VND/tháng)</label>
+            <input class="input" name="price" required type="number" placeholder="3500000" />
+          </div>
+          <div>
+            <label class="badge">Diện tích (m²)</label>
+            <input class="input" name="area" required type="number" placeholder="25" />
+          </div>
+        </div>
+
+        <div>
+          <label class="badge">Tiện ích (ngăn bằng dấu phẩy)</label>
+          <input class="input" name="amenities" placeholder="wc_rieng, may_lanh, gio_tu_do..." />
+        </div>
+
+        <div>
+          <label class="badge">Mô tả</label>
+          <textarea class="input" name="description" rows="5" placeholder="Mô tả chi tiết phòng, nội thất, giờ giấc..."></textarea>
+        </div>
+
+        <div>
+          <label class="badge">Link ảnh (ngăn bằng dấu phẩy)</label>
+          <input class="input" name="images" placeholder="https://.../1.jpg, https://.../2.jpg" />
+        </div>
+
+        <button class="btn" type="submit">Gửi yêu cầu đăng tin</button>
+        <div class="badge" id="postMsg"></div>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="../../scripts/app.js"></script>
+</body>
+</html>

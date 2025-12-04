@@ -1,0 +1,32 @@
+[
+  {
+    "id": "p001",
+    "title": "Phòng trọ full nội thất gần trung tâm",
+    "address": "Quận 7, TP.HCM",
+    "district": "Quận 7",
+    "city": "TP.HCM",
+    "price": 3500000,
+    "area": 25,
+    "type": "phong_tro",
+    "amenities": ["wc_rieng", "may_lanh", "gio_tu_do"],
+    "images": [],
+    "owner": { "name": "Anh A", "phone": "0900000000", "zalo": "0900000000" },
+    "status": "available",
+    "createdAt": "2025-12-01"
+  },
+  {
+    "id": "p002",
+    "title": "Chung cư mini có gác, giờ giấc tự do",
+    "address": "Gò Vấp, TP.HCM",
+    "district": "Gò Vấp",
+    "city": "TP.HCM",
+    "price": 2800000,
+    "area": 22,
+    "type": "chung_cu_mini",
+    "amenities": ["gac", "wc_rieng"],
+    "images": [],
+    "owner": { "name": "Chị B", "phone": "0911111111", "zalo": "0911111111" },
+    "status": "available",
+    "createdAt": "2025-11-25"
+  }
+]

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chi tiết phòng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/src/styles/style.css" />
+  <link rel="icon" href="/favicon.ico" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="topbar-left">
+        <a class="logo" href="/src/pages/listings/index.html" style="text-decoration:none;">
+          <span class="logo-orb"></span>
+          <span class="logo-text-main">RoomHub</span>
+          <span class="logo-text-sub">Chi tiết</span>
+        </a>
+        <div class="topbar-badge">
+          <span class="pulse-dot"></span>
+          Verified data
+        </div>
+      </div>
+      <div class="topbar-right">
+        <a class="topbar-cta" href="/src/pages/post/index.html">Đăng tin</a>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="content" style="max-width: 980px; margin: 0 auto;">
+        <div class="card card-list" style="margin-top: 16px;">
+          <div class="card-list-header">
+            <div>
+              <h2 id="dTitle">Đang tải...</h2>
+              <p id="dSub">Vui lòng đợi một chút.</p>
+            </div>
+            <div class="list-controls">
+              <a class="btn btn-ghost" href="/src/pages/listings/index.html">← Quay lại</a>
+            </div>
+          </div>
+
+          <div id="detailWrap"></div>
+        </div>
+
+        <div class="card card-filter" style="margin-top: 16px;">
+          <div class="card-header">
+            <div>
+              <h2>Đặt lịch xem phòng</h2>
+              <p>Gửi thông tin để chủ trọ liên hệ xác nhận.</p>
+            </div>
+            <span class="chip-label">Lead</span>
+          </div>
+
+          <form id="leadForm">
+            <div class="filter-grid">
+              <div class="filter-group">
+                <label>Họ tên</label>
+                <input class="input" name="name" required placeholder="VD: Nguyễn Văn A" />
+              </div>
+              <div class="filter-group">
+                <label>Số điện thoại</label>
+                <input class="input" name="phone" required placeholder="VD: 09xxxxxxxx" />
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <label>Thời gian muốn xem</label>
+              <input class="input" name="time" required placeholder="VD: Tối Thứ 6, sau 19:00" />
+            </div>
+
+            <div class="filter-group">
+              <label>Ghi chú (tuỳ chọn)</label>
+              <input class="input" name="note" placeholder="VD: Ở 2 người, cần chỗ để xe..." />
+            </div>
+
+            <div class="filter-footer" style="justify-content: space-between;">
+              <div class="filter-summary" id="leadMsg">Chưa gửi</div>
+              <button class="btn btn-primary" type="submit">Gửi yêu cầu</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/src/scripts/app.js"></script>
+</body>
+</html>
